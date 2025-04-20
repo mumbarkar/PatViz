@@ -1,0 +1,19 @@
+Package: PatViz
+Type: Package
+Title: Patient Profile Viewer for Clinical Trials
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Maheshkumar", "Umbarkar",
+      email = "maheshubr30@gmail.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: A framework to visualize the patient-level data from clinical trials.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    rmarkdown
+Imports: 
+    shiny
