@@ -1,3 +1,5 @@
+library(shiny)
+
 app_ui <- function() {
   fluidPage(
     titlePanel("Patient Profile Viewer"),
