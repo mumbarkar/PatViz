@@ -1,6 +1,7 @@
 # 📦 PatViz
 
 A lightweight, modular, and fully customizable **Shiny framework** for visualizing patient-level data in clinical trials. This framework is perfect for clinical programmers and data scientists who want full control over UI, domains, and patient-level insights.
+![PatViz Package Logo](man/figures/logo.png)
 
 ------------------------------------------------------------------------
 
@@ -51,6 +52,8 @@ run_patviz(adsl = adsl)
 ------------------------------------------------------------------------
 
 ## 📂 Project Structure
+
+```{=html}
 <pre> <code>
 PatViz/
 ├── R/
@@ -64,6 +67,7 @@ PatViz/
 ├── DESCRIPTION                # Package metadata
 ├── LICENSE                    # (optional) MIT or GPL
 </code> </pre>
+```
 
 ------------------------------------------------------------------------
 
