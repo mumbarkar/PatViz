@@ -5,7 +5,7 @@ app_ui <- function() {
     titlePanel("Patient Profile Viewer"),
     sidebarLayout(
       sidebarPanel(
-        selectInput("subject", "Subject ID", choices = NULL),
+        selectInput("subjid", "Subject ID", choices = character(0)),
         checkboxGroupInput("domains", "Data Domains", choices = c("Demographics" = "demo"))
       ),
       mainPanel(

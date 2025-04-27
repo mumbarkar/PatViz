@@ -5,9 +5,9 @@
 #' @param adlb Lab dataset (optional)
 #' @export
 run_patviz <- function(adsl, adae = NULL, adlb = NULL) {
-  options(patientProfile.adsl = adsl)
-  options(patientProfile.adae = adae)
-  options(patientProfile.adlb = adlb)
+  options(patviz.adsl = adsl)
+  options(patviz.adae = adae)
+  options(patviz.adlb = adlb)
 
   shiny::shinyApp(
     ui = app_ui(),

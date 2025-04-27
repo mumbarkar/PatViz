@@ -1,7 +1,10 @@
 app_server <- function(input, output, session) {
-  adsl <- getOption("patviz.adsl")
-  updateSelectInput(session, "subjid", choices = unique(adsl$USUBJID))
+  observe({
+    req(adsl)
+    updateSelectInput(session, "subjid", choices = unique(adsl$USUBJID))
+  })
 
+  adsl <- getOption("patviz.adsl")
   subj_data <- reactive({
     req(input$subjid)
     adsl[adsl$USUBJID == input$subjid, ]
@@ -9,11 +12,14 @@ app_server <- function(input, output, session) {
 
   output$domain_ui <- renderUI({
     req(input$domains)
-    tabs <- list()
-    if ("demo" %in% input$domains) {
-      tabs <- c(tabs, tabPanel("Demographics", patviz_mod_demographics_ui("demo")))
-    }
-    do.call(tabsetPanel, tabs)
+    tab_list <- lapply(input$domains, function(domain) {
+      if (domain == "demo") {
+        tabPanel("Demographics", patviz_mod_demographics_ui("demo"))
+      }
+      # add future domains here
+    })
+
+    do.call(tabsetPanel, tab_list)
   })
 
   observe({
